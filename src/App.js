@@ -23,7 +23,9 @@ export default function App() {
       <Button onClick={() => dispatch({ type: 'COUNTER_INC' })}>Roll Dice</Button>
       <Button onClick={() => dispatch({ type: 'COUNTER_RESET' })}>Clear</Button>
       <MyText num={state.counter}/>
-      <Dice num={state.n}/> 
+      
+      {state.diceRolls.map(n=> <Dice num={n} />)}
+      
     </div>  
   );  
 }  

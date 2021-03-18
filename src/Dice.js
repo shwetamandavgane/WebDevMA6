@@ -11,14 +11,13 @@ const Label = styled.label`
   border-radius:20%;
   padding:8px 10px 8px 10px;
   margin-left:10px;
+  margin-top:10px;
 `;
 
 
 export default function Dice(props) {
   
   return (
-    <div>
         <Label>{props.num}</Label>
-    </div>
   );
 }
