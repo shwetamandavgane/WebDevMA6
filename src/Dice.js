@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useStore } from './Store';
 
 const Label = styled.label`
   justify-content:center;  
@@ -11,13 +12,15 @@ const Label = styled.label`
   border-radius:20%;
   padding:8px 10px 8px 10px;
   margin-left:10px;
-  margin-top:10px;
+  margin-top:50%;
+  margin-bottom: 50%;
 `;
 
 
 export default function Dice(props) {
+  const { state, dispatch } = useStore();
   
   return (
-        <Label>{props.num}</Label>
+        <Label>{props.num}</Label>                   
   );
 }

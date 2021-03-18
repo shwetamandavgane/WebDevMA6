@@ -14,8 +14,15 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
+const Span = styled.span`
+  
+  margin-top: 30px;
+  padding-top: 30px;
+`;
+
 export default function App() {  
   const { state, dispatch } = useStore();
+  let count = 0;
 
   return (  
     <div>      
@@ -24,7 +31,12 @@ export default function App() {
       <Button onClick={() => dispatch({ type: 'COUNTER_RESET' })}>Clear</Button>
       <MyText num={state.counter}/>
       
-      {state.diceRolls.map(n=> <Dice num={n} />)}
+      {state.diceRolls.map(function(item, i){
+          if(i%5==0){
+            return <span><br /><br/><Dice num={item} /></span>  
+          }
+          return <Dice num={item} />
+      })}
       
     </div>  
   );  

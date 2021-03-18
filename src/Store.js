@@ -2,7 +2,6 @@ import React, { createContext, useReducer, useContext } from 'react';
 
 const defaultState = {
   counter: 0,
-  sum:0,
   n:0,
   diceRolls:[]
 };
@@ -13,12 +12,10 @@ function reducer(state = defaultState, action = {}) {
     case 'COUNTER_INC':
       //Random value for adding and storing it to store for Dice  
       state.n =  (Math.floor(Math.random() * (7 - 1) + 1));
-      state.sum +=1;
       return { ...state, counter: state.counter + state.n,diceRolls:[...state.diceRolls,state.n] };
     case 'COUNTER_RESET':
       //Resetting for Dice  
       state.n=0;
-      state.sum=0;
       return { ...state, counter: 0,diceRolls:[] };
     default:
       return state;
